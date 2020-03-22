@@ -22,6 +22,8 @@
         </thead>
     </table>
 
+    <a href="{{ path('delete_product', {id:product.id}) }}">{{ 'product.delete'|trans }}</a>
+
 
 
     {{ form(form_add_cart) }}

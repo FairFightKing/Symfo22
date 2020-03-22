@@ -12,6 +12,7 @@ product:
   Deleted: 'Le produit as ete supprimer avec succes'
   add: 'ajouter au panier'
   added: 'produit ajouter au panier'
+  delete: 'Supprimer ce prodit'
 
 
 cart:

@@ -12,6 +12,7 @@ product:
   Deleted: 'Product was successfully deleted'
   add: 'add to the cart'
   added: 'product added to the cart'
+  delete: 'Delete that product'
 
 cart:
   title: 'Your shopping Cart'
