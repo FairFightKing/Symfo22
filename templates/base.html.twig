@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% set route_attr = app.request.attributes.get('_locale') %}
+<nav>
+    <a href="{% if route_attr =='fr' %}/fr{% else %}/en{% endif %}/products">{{ 'product.title'|trans }}</a>
+    |
+    <a href="{% if route_attr =='fr' %}/fr{% else %}/en{% endif %}/">{{ 'cart.title'|trans }}</a>
+    <br/>
+    <a href="{% if route_attr =='fr' %}/en{% else %}/fr{% endif %}">{{ 'base.language'|trans }}</a>
+</nav>
+<div class="container">
+    {% for type, messages in app.flashes %}
+        {% for message in messages %}
+            <p class="alert alert-{{ type }}">{{ type }} : {{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    {% block body %}{% endblock %}
+</div>
+{% block javascripts %}{% endblock %}
+</body>
 </html>

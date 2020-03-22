@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'product.title'|trans }}{% endblock %}
+
+{% block body %}
+
+    <h1>{{ 'product.title'|trans }}</h1>
+    {% if products is not empty %}
+        <table border="1">
+            <thead>
+            <tr>
+                <td>{{ 'product.Picture'|trans }}</td>
+                <td>{{ 'product.Name'|trans }}</td>
+                <td>{{ 'product.Quantity'|trans }}</td>
+                <td>{{ 'product.Price'|trans }}</td>
+            </tr>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td> <img src="{{ asset('/uploads/'~product.picture) }}" alt="" width="256px"> </td>
+                    <td><a href="{% if route_attr =='fr' %}/fr{% else %}/en{% endif %}/product/{{ product.id }}"> {{ product.name }} </a></td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.price }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            </thead>
+        </table>
+    {% else %}
+        <p>{{ 'product.Empty'|trans }}</p>
+    {% endif %}
+
+    {{ form(add_form) }}
+
+{% endblock %}

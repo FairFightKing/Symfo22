@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'cart.title'|trans }}{% endblock %}
+
+{% block body %}
+
+    <h1>{{ 'cart.title'|trans }}</h1>
+    {% if cart is not empty %}
+        <table border="1">
+            <thead>
+            <tr>
+                <td>{{ 'product.Picture'|trans }}</td>
+                <td>{{ 'product.Name'|trans }}</td>
+                <td>{{ 'product.Quantity'|trans }}</td>
+                <td>{{ 'product.Price'|trans }}</td>
+                <td>{{ 'cart.removetitle'|trans }}</td>
+            </tr>
+            <tbody>
+            {% for cart in cart %}
+                <tr>
+                    {% for product in cart.Products %}
+                        <td> <img src="{{ asset('/uploads/'~product.picture) }}" alt="" width="256px"> </td>
+                        <td> {{ product.name }} </td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{ product.price * product.quantity }}</td>
+                        <td><a href="{{ path('delete_cart', {id:product.id}) }}">{{ 'cart.remove'|trans }}</a></td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+            </thead>
+        </table>
+    {% else %}
+        <p>{{ 'cart.Empty'|trans }}</p>
+    {% endif %}
+
+{% endblock %}

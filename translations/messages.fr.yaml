@@ -1,0 +1,28 @@
+base:
+  language: 'changer la langue'
+
+product:
+  title: 'Liste des produits'
+  Name: 'Nom'
+  Picture: 'Image'
+  Quantity: 'Quantite'
+  Price: 'Prix'
+  Empty: "Il n'y as pas de produits"
+  NotFound: 'Produit non trouver'
+  Deleted: 'Le produit as ete supprimer avec succes'
+  add: 'ajouter au panier'
+  added: 'produit ajouter au panier'
+
+
+cart:
+  title: 'Votre paniez'
+  Empty: 'panier vide'
+  NotFound: 'panier non trouver'
+  Deleted: 'Le panier as ete supprimer avec succes'
+  remove: 'Retirer ce produit du panier'
+
+Name: 'Nom'
+Quantity: 'Quantite'
+Price: 'Prix'
+The image of the Product: "L'image du produit"
+Save: 'Sauvegarder'

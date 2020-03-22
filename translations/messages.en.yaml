@@ -1,0 +1,28 @@
+base:
+  language: 'Change language'
+
+product:
+  title: 'Products list'
+  Name: 'Name'
+  Picture: 'Picture'
+  Quantity: 'Quantity'
+  Price: 'Price'
+  Empty: "There's no products"
+  NotFound: 'Product Not found'
+  Deleted: 'Product was successfully deleted'
+  add: 'add to the cart'
+  added: 'product added to the cart'
+
+cart:
+  title: 'Your shopping Cart'
+  Empty: 'Cart is empty'
+  NotFound: 'cart Not found'
+  Deleted: 'cart was successfully deleted'
+  remove: 'Remove'
+  removetitle: 'Remove that product from the cart'
+
+Name: 'Name'
+Quantity: 'Quantity'
+Price: 'Price'
+The image of the Product: "The image of the Product"
+Save: 'Save'
