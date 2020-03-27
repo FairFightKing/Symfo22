@@ -18,19 +18,13 @@ class CartController extends AbstractController
      */
     public function index(Request $request)
     {
-        try{
-            $pdo = $this->getDoctrine()->getManager();
+        $pdo = $this->getDoctrine()->getManager();
 
-            $cart = $pdo->getRepository(Cart::class)->findAll();
-    
-            return $this->render('cart/index.html.twig',[
-                'cart' => $cart,
-            ]);
-        } catch (Exception $e){
-            return new Response("imposs");
+        $cart = $pdo->getRepository(Cart::class)->findAll();
 
-        }
-       
+        return $this->render('cart/index.html.twig',[
+            'cart' => $cart,
+        ]);
     }
     /**
      * @Route("/cart/delete/{id}", name="delete_cart")
