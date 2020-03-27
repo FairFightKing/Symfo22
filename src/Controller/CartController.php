@@ -27,6 +27,7 @@ class CartController extends AbstractController
                 'cart' => $cart,
             ]);
         }catch (Exception $e){
+            echo "erreur";
             echo $e->getMessage();
 
         }
