@@ -26,9 +26,8 @@ class CartController extends AbstractController
             return $this->render('cart/index.html.twig',[
                 'cart' => $cart,
             ]);
-        }catch (Exception $e){
-            echo "erreur";
-            echo $e->getMessage();
+        } catch (Exception $e){
+            return new Response("imposs");
 
         }
        
