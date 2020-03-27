@@ -31,6 +31,7 @@ class Cart
 
     /**
      * @ORM\Column(type="boolean")
+     * 
      */
     private $status;
 
