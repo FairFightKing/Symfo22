@@ -1,7 +1,7 @@
 index:
   path: /{_locale}
   controller: App\Controller\CartController::index
-  Defaults:
+  defaults:
     _locale: en
-   requirements :
+  requirements :
     _locale: en|fr
